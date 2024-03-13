@@ -8,16 +8,32 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "rules": {
-    "no-console": 2
+    "max-lines": ["error", 100],
+    "no-console": "warn",
+    "no-var": "error",
+    "react/button-has-type": "error",
+    "react/destructuring-assignment": [
+      "error",
+      "always",
+      { "destructureInSignature": "always" }
+    ],
+    "react/function-component-definition": [
+      "warn",
+      { "namedComponents": "arrow-function" }
+    ],
+    "react/jsx-no-leaked-render": ["error", { "validStrategies": ["ternary"] }],
+    "react/no-danger": "error",
+    "react/no-danger-with-children": "error"
   },
   "settings": {
     "react": {
