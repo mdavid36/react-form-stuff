@@ -1,3 +1,4 @@
+'use client';
 import {
   Button,
   Card,
@@ -8,7 +9,7 @@ import {
 import { UserContext } from '@/context/providers/UserContext';
 import { useContext } from 'react';
 
-const Dashboard = () => {
+const DashboardContainer = () => {
   const { userFirstName, userId, userLastName, userName } =
     useContext(UserContext);
   return (
@@ -36,4 +37,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardContainer;
