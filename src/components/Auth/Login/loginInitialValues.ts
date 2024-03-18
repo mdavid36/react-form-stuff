@@ -1,7 +1,6 @@
-import { LoginCredentials } from './loginValidation';
+import { LoginCredentials } from '../types/authTypes';
 
 export const loginInitialValues: LoginCredentials = {
   userName: '',
-  password: '',
-  verifyPassword: ''
+  password: ''
 };

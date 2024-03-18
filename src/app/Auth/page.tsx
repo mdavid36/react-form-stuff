@@ -1,7 +1,8 @@
-import LoginContainer from '@/components/Auth/Login/LoginContainer';
+'use client';
+import AuthContainer from '@/components/Auth/AuthContainer';
 
 const Auth = () => {
-  return <LoginContainer />;
+  return <AuthContainer />;
 };
 
 export default Auth;

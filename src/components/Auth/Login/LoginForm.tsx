@@ -1,29 +1,35 @@
-import { Box, Button, TextField } from '@mui/material';
-import { useFormikContext } from 'formik';
-import { LoginCredentials } from './loginValidation';
+import { Box, TextField } from '@mui/material';
+import { FormikErrors, FormikTouched } from 'formik';
+import { LoginCredentials } from '../types/authTypes';
 
-const LoginForm = () => {
-  const { handleSubmit, errors, touched } =
-    useFormikContext<LoginCredentials>();
+interface LoginFormProps {
+  errors: FormikErrors<LoginCredentials> | undefined;
+  touched: FormikTouched<LoginCredentials> | undefined;
+}
+
+const LoginForm = ({ errors, touched }: LoginFormProps) => {
   return (
     <Box>
       <TextField
         name="userName"
         label="User Name"
-        error={touched.userName && Boolean(errors.userName) ? true : false}
+        error={touched?.userName && Boolean(errors?.userName) ? true : false}
         helperText={
-          touched.userName && Boolean(errors.userName) ? errors.userName : null
+          touched?.userName && Boolean(errors?.userName)
+            ? errors?.userName
+            : null
         }
       />
       <TextField
         name="password"
         label="Password"
-        error={touched.password && Boolean(errors.password) ? true : false}
+        error={touched?.password && Boolean(errors?.password) ? true : false}
         helperText={
-          touched.password && Boolean(errors.password) ? errors.password : null
+          touched?.password && Boolean(errors?.password)
+            ? errors?.password
+            : null
         }
       />
-      <Button onClick={() => handleSubmit()}>Submit</Button>
     </Box>
   );
 };
