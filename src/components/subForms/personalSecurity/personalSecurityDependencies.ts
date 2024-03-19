@@ -1,7 +1,11 @@
 import { object, ref, string } from 'yup';
 
-export const registrationSchema = object({
-  email: string().email().required(),
+export type PersonalSecurity = {
+  password: string;
+  verifyPassword: string;
+};
+
+export const personalSecuritySchema = object({
   password: string()
     .required()
     .min(8, 'Password is too short - should be 8 chars minimum.')
@@ -10,3 +14,8 @@ export const registrationSchema = object({
     .oneOf([ref('password')], 'Must match "password" field value')
     .required()
 });
+
+export const personalSecurityInitialValues: PersonalSecurity = {
+  password: '',
+  verifyPassword: ''
+};

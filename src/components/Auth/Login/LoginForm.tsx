@@ -2,7 +2,7 @@ import { Box, TextField } from '@mui/material';
 import { FormikErrors, FormikTouched } from 'formik';
 import { LoginCredentials } from '../types/authTypes';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   errors: FormikErrors<LoginCredentials> | undefined;
   touched: FormikTouched<LoginCredentials> | undefined;
 }

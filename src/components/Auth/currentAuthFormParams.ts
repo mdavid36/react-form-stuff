@@ -1,14 +1,16 @@
 import { FormikValues } from 'formik';
 import { loginInitialValues } from './Login/loginInitialValues';
 import { loginSchema } from './Login/loginValidation';
-import { registrationInitialValues } from './Register/registrationInitialValues';
-import { registrationSchema } from './Register/registrationValidaiton';
+import {
+  registrationInitialValues,
+  registrationSchema
+} from './Register/registrationFormDependencies';
 import LoginForm from './Login/LoginForm';
 import RegistrationForm from './Register/RegistrationForm';
 
 //TODO: maybe we tryout some dynamic imports here.
 
-const useAuthFormParams = (authType: string) => {
+const currentAuthFormParams = (authType: string) => {
   const initialValues = { ...loginInitialValues, ...registrationInitialValues };
   switch (authType) {
     case 'login':
@@ -38,4 +40,4 @@ const useAuthFormParams = (authType: string) => {
   }
 };
 
-export default useAuthFormParams;
+export default currentAuthFormParams;
