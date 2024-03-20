@@ -7,10 +7,7 @@ import {
 } from '@mui/material';
 import { AuthTypeRadioGroupProps } from './types/authTypes';
 
-const AuthTypeRadioGroup = ({
-  setAuthType,
-  handleReset
-}: AuthTypeRadioGroupProps) => {
+const AuthTypeRadioGroup = ({ setAuthType }: AuthTypeRadioGroupProps) => {
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">
@@ -21,7 +18,6 @@ const AuthTypeRadioGroup = ({
         name="radio-buttons-group"
         defaultValue="login"
         onChange={(event, value) => {
-          handleReset();
           setAuthType(value);
         }}
       >

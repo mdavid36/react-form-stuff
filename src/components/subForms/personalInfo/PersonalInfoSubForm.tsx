@@ -10,7 +10,8 @@ interface PersonalInfoSubFormProps {
 const PersonalInfoSubForm = ({ errors, touched }: PersonalInfoSubFormProps) => (
   <Box>
     <TextField
-      name="firstName"
+      id="personalInfo.firstName"
+      name="personalInfo.firstName"
       label="First Name"
       error={touched?.firstName && Boolean(errors?.firstName) ? true : false}
       helperText={
@@ -20,7 +21,7 @@ const PersonalInfoSubForm = ({ errors, touched }: PersonalInfoSubFormProps) => (
       }
     />
     <TextField
-      name="lastName"
+      name="personalInfo.lastName"
       label="Last Name"
       error={touched?.lastName && Boolean(errors?.lastName) ? true : false}
       helperText={
@@ -28,7 +29,7 @@ const PersonalInfoSubForm = ({ errors, touched }: PersonalInfoSubFormProps) => (
       }
     />
     <TextField
-      name="email"
+      name="personalInfo.email"
       label="Email"
       error={touched?.email && Boolean(errors?.email) ? true : false}
       helperText={
@@ -36,13 +37,13 @@ const PersonalInfoSubForm = ({ errors, touched }: PersonalInfoSubFormProps) => (
       }
     />
     <TextField
-      name="dob"
+      name="personalInfo.dob"
       label="Date of Birth"
       error={touched?.dob && Boolean(errors?.dob) ? true : false}
       helperText={touched?.dob && Boolean(errors?.dob) ? errors?.dob : null}
     />
     <TextField
-      name="address"
+      name="personalInfo.address"
       label="Address"
       error={touched?.address && Boolean(errors?.address) ? true : false}
       helperText={

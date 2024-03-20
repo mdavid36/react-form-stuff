@@ -18,14 +18,11 @@ const AuthContainer = (): JSX.Element => {
         onSubmit={handleSubmit}
         validationSchema={schema}
       >
-        {({ errors, touched, handleSubmit, handleReset }) => {
+        {({ errors, touched, handleSubmit, handleChange }) => {
           return (
             <>
-              <AuthTypeRadioGroup
-                setAuthType={setAuthType}
-                handleReset={handleReset}
-              />
-              <Form onSubmit={handleSubmit}>
+              <AuthTypeRadioGroup setAuthType={setAuthType} />
+              <Form onSubmit={handleSubmit} onChange={handleChange}>
                 <CurrentForm errors={errors} touched={touched} />
                 <Button type="submit" variant="outlined">
                   Submit

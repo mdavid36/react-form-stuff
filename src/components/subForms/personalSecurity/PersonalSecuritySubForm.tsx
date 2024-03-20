@@ -13,7 +13,7 @@ const PersonalSecuritySubForm = ({
 }: PersonalSecuritySubFormProps) => (
   <Box>
     <TextField
-      name="password"
+      name="personalSecurity.password"
       label="Password"
       error={touched?.password && Boolean(errors?.password) ? true : false}
       helperText={
@@ -21,7 +21,7 @@ const PersonalSecuritySubForm = ({
       }
     />
     <TextField
-      name="verifyPassword"
+      name="personalSecurity.verifyPassword"
       label="Confirm Password"
       error={
         touched?.verifyPassword && Boolean(errors?.verifyPassword)
