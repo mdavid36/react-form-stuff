@@ -2,12 +2,12 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import { Form, Formik } from 'formik';
 import { useMemo, useState } from 'react';
 import AuthTypeRadioGroup from './AuthTypeRadioGroup';
-import currentAuthFormParams from './currentAuthFormParams';
+import getAuthFormParams from '../../utils/getAuthFormParams';
 
 const AuthContainer = (): JSX.Element => {
   const [authType, setAuthType] = useState<string>('');
   const { initialValues, schema, handleSubmit, CurrentForm } = useMemo(
-    () => currentAuthFormParams(authType),
+    () => getAuthFormParams(authType),
     [authType]
   );
 
@@ -17,20 +17,19 @@ const AuthContainer = (): JSX.Element => {
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={schema}
+        enableReinitialize
       >
-        {({ errors, touched, handleSubmit, handleChange }) => {
-          return (
-            <>
-              <AuthTypeRadioGroup setAuthType={setAuthType} />
-              <Form onSubmit={handleSubmit} onChange={handleChange}>
-                <CurrentForm errors={errors} touched={touched} />
-                <Button type="submit" variant="outlined">
-                  Submit
-                </Button>
-              </Form>
-            </>
-          );
-        }}
+        {({ errors, touched, handleSubmit, handleChange }) => (
+          <>
+            <AuthTypeRadioGroup setAuthType={setAuthType} />
+            <Form onSubmit={handleSubmit} onChange={handleChange}>
+              <CurrentForm errors={errors} touched={touched} />
+              <Button type="submit" variant="outlined">
+                Submit
+              </Button>
+            </Form>
+          </>
+        )}
       </Formik>
       <Box>
         <Typography>Did we forget our password?</Typography>

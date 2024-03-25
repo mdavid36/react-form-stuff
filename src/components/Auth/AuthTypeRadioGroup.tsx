@@ -5,7 +5,11 @@ import {
   Radio,
   RadioGroup
 } from '@mui/material';
-import { AuthTypeRadioGroupProps } from './types/authTypes';
+import { Dispatch, SetStateAction } from 'react';
+
+export interface AuthTypeRadioGroupProps {
+  setAuthType: Dispatch<SetStateAction<string>>;
+}
 
 const AuthTypeRadioGroup = ({ setAuthType }: AuthTypeRadioGroupProps) => {
   return (

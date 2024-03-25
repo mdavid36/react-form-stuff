@@ -1,13 +1,19 @@
 import {
+  PersonalSecurity,
   personalSecurityInitialValues,
   personalSecuritySchema
-} from '@/components/subForms/personalSecurity/personalSecurityDependencies';
+} from '../../../components/subForms/personalSecurity/personalSecurityDependencies';
 import {
+  PersonalInfo,
   personalInfoInitialValues,
   personalInfoSchema
-} from '@/components/subForms/personalInfo/personalInfoDependencies';
-import { RegistrationCredentials } from '../types/authTypes';
+} from '../../../components/subForms/personalInfo/personalInfoDependencies';
 import { object } from 'yup';
+
+export type RegistrationCredentials = {
+  personalInfo: PersonalInfo;
+  personalSecurity: PersonalSecurity;
+};
 
 export const registrationInitialValues: RegistrationCredentials = {
   personalInfo: { ...personalInfoInitialValues },

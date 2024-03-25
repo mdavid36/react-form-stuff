@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import { FormikErrors, FormikTouched } from 'formik';
-import { RegistrationCredentials } from '../types/authTypes';
 import PersonalInfoSubForm from '@/components/subForms/personalInfo/PersonalInfoSubForm';
 import PersonalSecuritySubForm from '@/components/subForms/personalSecurity/PersonalSecuritySubForm';
+import { RegistrationCredentials } from './registrationFormDependencies';
 
 export interface RegistrationFormProps {
   errors: FormikErrors<RegistrationCredentials> | undefined;
