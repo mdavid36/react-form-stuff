@@ -8,7 +8,7 @@ import {
 } from '../components/Auth/Register/registrationFormDependencies';
 import LoginForm from '../components/Auth/Login/LoginForm';
 import RegistrationForm from '../components/Auth/Register/RegistrationForm';
-import { authSubmitHandler } from './authSubmitHandler';
+import authSubmitHandler from './authSubmitHandler';
 
 //TODO: maybe we tryout some dynamic imports here.
 

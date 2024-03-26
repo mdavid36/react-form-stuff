@@ -1,6 +1,6 @@
 import { FormikValues } from 'formik';
 
-export const authSubmitHandler = (submitType: string) => {
+const authSubmitHandler = (submitType: string) => {
   switch (submitType) {
     case 'login':
       return (values: FormikValues) => {
@@ -16,3 +16,5 @@ export const authSubmitHandler = (submitType: string) => {
       };
   }
 };
+
+export default authSubmitHandler;
