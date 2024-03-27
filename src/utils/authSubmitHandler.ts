@@ -1,19 +1,28 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FormikValues } from 'formik';
-
-const authSubmitHandler = (submitType: string) => {
+export const handleLoginSubmit = async (values: FormikValues) => {
+  const returnVal = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('foo');
+    }, 300);
+  });
+  return returnVal;
+};
+export const handleRegistrationSubmit = (values: FormikValues) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('foo');
+    }, 300);
+  });
+};
+export const authSubmitHandler = (submitType: string) => {
   switch (submitType) {
     case 'login':
-      return (values: FormikValues) => {
-        console.log('loginSubmit', values);
-      };
+      return handleLoginSubmit;
     case 'register':
-      return (values: FormikValues) => {
-        console.log('registerSubmit', values);
-      };
+      return handleRegistrationSubmit;
     default:
-      return (values: FormikValues) => {
-        console.log('default', values);
-      };
+      return handleLoginSubmit;
   }
 };
 

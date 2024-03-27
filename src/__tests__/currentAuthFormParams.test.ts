@@ -1,9 +1,9 @@
 import {
   loginInitialValues,
   loginSchema
-} from '../components/Auth/Login/loginFormDependencies';
-import LoginForm from '../components/Auth/Login/LoginForm';
-import getAuthFormParams from '../utils/getAuthFormParams';
+} from '@/components/Auth/Login/loginFormDependencies';
+import LoginForm from '@/components/Auth/Login/LoginForm';
+import getAuthFormParams from '@/utils/getAuthFormParams';
 import RegistrationForm from '@/components/Auth/Register/RegistrationForm';
 import {
   registrationInitialValues,
