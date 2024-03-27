@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import styles from '../app/page.module.css';
+import styles from './page.module.css';
 
 const Home = () => {
   return (
-    <main className={styles.main}>
+    <>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -90,7 +90,7 @@ const Home = () => {
           </p>
         </a>
       </div>
-    </main>
+    </>
   );
 };
 
