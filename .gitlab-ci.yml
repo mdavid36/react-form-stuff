@@ -24,10 +24,12 @@ cache:
   paths:
     - node_modules/
 
-test_async:
+tests:
   script:
     - npm install
     - npm run test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 # test_db:
 #   script:
 #     - npm install
