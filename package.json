@@ -16,6 +16,7 @@
     "@fontsource/roboto": "^5.0.12",
     "@mui/icons-material": "^5.15.12",
     "@mui/material": "^5.15.12",
+    "@mui/material-nextjs": "^5.15.11",
     "@mui/styled-engine-sc": "^6.0.0-alpha.17",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "formik": "^2.4.5",
