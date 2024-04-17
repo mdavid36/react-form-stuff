@@ -4,6 +4,7 @@ import Providers from '@/context/providers/Providers';
 import './globals.css';
 import Navigation from '@/components/Navigation/Navigation';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { Container } from '@mui/material';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +24,7 @@ const RootLayout = ({
         <AppRouterCacheProvider>
           <Providers>
             <Navigation />
-            {children}
+            <Container sx={{ height: '100vh' }}>{children}</Container>
           </Providers>
         </AppRouterCacheProvider>
       </body>
