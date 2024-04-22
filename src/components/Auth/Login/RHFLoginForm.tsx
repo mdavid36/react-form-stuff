@@ -4,17 +4,27 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import ControlledInput from '@/components/controlledInput/ControlledInput';
 
+const zStringReq = (msg?: string, label?: string) => {
+  let message = 'This field is Required';
+  if (msg) {
+    message = msg;
+  }
+  if (label && !msg) {
+    message = `${label} is Requried`;
+  }
+  return z.string().trim().min(1, { message: message });
+};
+
 const LoginSchema = z.object({
-  userName: z.string({ required_error: 'User Name is required' }),
-  password: z
-    .string({ required_error: 'Password is required' })
+  userName: zStringReq('User Name'),
+  password: zStringReq('Password')
     .min(8, { message: 'Password is too short - should be 8 chars minimum.' })
     .regex(/[a-zA-Z]/, { message: 'Password can only contain Latin letters.' })
 });
 
 const initialVals = {
-  userName: undefined,
-  password: undefined
+  userName: '',
+  password: ''
 };
 
 type LoginCreds = z.infer<typeof LoginSchema>;
