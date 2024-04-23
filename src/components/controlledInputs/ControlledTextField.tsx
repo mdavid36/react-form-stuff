@@ -1,4 +1,4 @@
-import { TextField } from '@mui/material';
+import { TextField, TextFieldProps } from '@mui/material';
 import React from 'react';
 import { Controller, Control, Path } from 'react-hook-form';
 
@@ -6,13 +6,15 @@ type MyProps<T extends Record<string, unknown>> = {
   name: Path<T>;
   control: Control<T>;
   label: string;
+  // textFieldProps?: TextFieldProps;
 };
 
-const ControlledInput = <T extends Record<string, unknown>>({
+const ControlledTextField = <T extends Record<string, unknown>>({
   name,
   control,
-  label
-}: MyProps<T>): JSX.Element => {
+  label,
+  ...fieldProps
+}: MyProps<T> & TextFieldProps): JSX.Element => {
   return (
     <Controller
       name={name}
@@ -20,6 +22,7 @@ const ControlledInput = <T extends Record<string, unknown>>({
       render={({ field, fieldState: { error } }) => (
         <TextField
           {...field}
+          {...fieldProps}
           label={label}
           error={Boolean(error)}
           helperText={error ? error.message : null}
@@ -29,4 +32,4 @@ const ControlledInput = <T extends Record<string, unknown>>({
   );
 };
 
-export default ControlledInput;
+export default ControlledTextField;
