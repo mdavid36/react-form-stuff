@@ -1,7 +1,7 @@
+import loginInfoSchema from '@/utils/validation/yupValidation/yupLoginValidation';
 import {
   LoginInfo,
-  loginInfoInitialValues,
-  loginInfoSchema
+  loginInfoInitialValues
 } from '../../../components/subForms/loginInfo/loginInfoDependencies';
 import { ObjectSchema, object } from 'yup';
 
